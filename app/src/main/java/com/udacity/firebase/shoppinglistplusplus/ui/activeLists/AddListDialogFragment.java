@@ -14,8 +14,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.firebase.client.Firebase;
+import com.firebase.client.ServerValue;
 import com.udacity.firebase.shoppinglistplusplus.R;
+import com.udacity.firebase.shoppinglistplusplus.model.ShoppingList;
 import com.udacity.firebase.shoppinglistplusplus.utils.Constants;
+import com.udacity.firebase.shoppinglistplusplus.utils.Utils;
 
 /**
  * Adds a new shopping list
@@ -91,10 +94,21 @@ public class AddListDialogFragment extends DialogFragment {
      * Add new active list
      */
     public void addShoppingList() {
-
+        //get reference to the root node in Firebase
         Firebase ref = new Firebase(Constants.FIREBASE_URL);
+        //Get the string that the user entered into the EditText
         String userEneteredName = mEditTextListName.getText().toString();
-        ref.child("listName").setValue(userEneteredName);
+        //Go to the "listName" child node of the root node.
+        //This will create the node for you if it doesn't already exist.
+        //Then using the setValue menu it will set value to the node the user entered
+
+        //Code below begins set up for Pojo object to be used.
+        ShoppingList list = new ShoppingList();
+        ShoppingList shoppinglist = new ShoppingList(userEneteredName,
+                "Anonymous Owner");
+        ref.child("activeList").setValue(shoppinglist);
+        //Code below sets value if a single item inside database.
+        //ref.child("listName").setValue(userEneteredName);
     }
 
 }
