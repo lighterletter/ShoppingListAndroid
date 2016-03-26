@@ -103,10 +103,9 @@ public class AddListDialogFragment extends DialogFragment {
         //Then using the setValue menu it will set value to the node the user entered
 
         //Code below begins set up for Pojo object to be used.
-        ShoppingList list = new ShoppingList();
         ShoppingList shoppinglist = new ShoppingList(userEneteredName,
                 "Anonymous Owner");
-        ref.child("activeList").setValue(shoppinglist);
+        ref.child(Constants.FIREBASE_PROPERTY_LIST_NAME).setValue(shoppinglist);
         //Code below sets value if a single item inside database.
         //ref.child("listName").setValue(userEneteredName);
     }

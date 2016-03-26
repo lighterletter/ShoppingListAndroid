@@ -73,7 +73,7 @@ public class ShoppingListsFragment extends Fragment {
 //                "Anonymous Owner");
 
 
-        final Firebase listNameRef = new Firebase(Constants.FIREBASE_URL).child("activeList");
+        final Firebase listNameRef = new Firebase(Constants.FIREBASE_URL).child(Constants.FIREBASE_PROPERTY_LIST_NAME);
         listNameRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {//root of; is activeList.
