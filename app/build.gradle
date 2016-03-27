@@ -23,6 +23,10 @@ android {
         }
     }
 
+    /* This for anyone following along with the repo. Since you will have a different
+     * root URL, this code loads up a value from your gradle.properties file.
+     */
+
     buildTypes.each {
         it.buildConfigField 'String', 'UNIQUE_FIREBASE_ROOT_URL', UniqueFirebaseRootUrl
     }
@@ -52,7 +56,8 @@ dependencies {
     compile 'com.android.support:support-v4:23.0.1'
     compile 'com.android.support:cardview-v7:23.0.1'
 
-    /*Firebase*/
+
+    /*Add Firebase dependency*/
     compile 'com.firebase:firebase-client-android:2.4.0'
 
     /* For Google Play Services */

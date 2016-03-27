@@ -7,13 +7,16 @@ import com.udacity.firebase.shoppinglistplusplus.utils.Constants;
 import java.util.HashMap;
 
 /**
+<<<<<<< HEAD
  * Created by c4q-john on 3/25/16.
+ * From Udacity.
+ * Class Defines the data structure for both Active and Archived ShoppingList objects.
  */
 public class ShoppingList {
     String listName;
     String owner;
 
-    private HashMap<String, Object> dateLastChanged;
+    private HashMap<String, Object> timestampLastChanged;
 
     //Required public constructor
     public ShoppingList() {
@@ -22,11 +25,10 @@ public class ShoppingList {
     public ShoppingList(String listName, String owner) {
         this.listName = listName;
         this.owner = owner;
-
-
         HashMap<String, Object> dateLastChangedObj = new HashMap<String, Object>();
         dateLastChangedObj.put(Constants.FIREBASE_PROPERTY_TIMESTAMP, ServerValue.TIMESTAMP);
-        this.dateLastChanged = dateLastChangedObj;
+        this.timestampLastChanged = dateLastChangedObj;
+
     }
 
     public String getListName() {
@@ -37,21 +39,16 @@ public class ShoppingList {
         return owner;
     }
 
-    public HashMap<String, Object> getDateLastChanged() {
 
-            return dateLastChanged;
-
+    public HashMap<String, Object> getTimestampLastChanged() {
+        return timestampLastChanged;
     }
 
 
-
-    // Use the method described in http://stackoverflow.com/questions/25500138/android-chat-crashes-on-datasnapshot-getvalue-for-timestamp/25512747#25512747
-// to get the long values from the date object.
     @JsonIgnore
-    public long getDateLastChangedLong() {
+    public long getTimestampLastChangedLong() {
 
-        return (long)dateLastChanged.get(Constants.FIREBASE_PROPERTY_TIMESTAMP);
+        return (long) timestampLastChanged.get(Constants.FIREBASE_PROPERTY_TIMESTAMP);
     }
-
 
 }

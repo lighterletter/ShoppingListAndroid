@@ -19,6 +19,7 @@ public final class Constants {
     public static final String FIREBASE_PROPERTY_LIST_NAME = "activeList";
     public static final String FIREBASE_PROPERTY_TIMESTAMP = "timeStamp";
 
+
     /**
      * Constants for Firebase URL
      */
@@ -28,6 +29,6 @@ public final class Constants {
     /**
      * Constants for bundles, extras and shared preferences keys
      */
-
+    public static final String KEY_LAYOUT_RESOURCE = "LAYOUT_RESOURCE";
 
 }
