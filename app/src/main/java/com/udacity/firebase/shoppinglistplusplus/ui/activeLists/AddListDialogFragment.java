@@ -14,11 +14,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.firebase.client.Firebase;
-import com.firebase.client.ServerValue;
-import com.udacity.firebase.shoppinglistplusplus.R;
-import com.udacity.firebase.shoppinglistplusplus.model.ShoppingList;
-import com.udacity.firebase.shoppinglistplusplus.utils.Constants;
-import com.udacity.firebase.shoppinglistplusplus.utils.Utils;
 import com.udacity.firebase.shoppinglistplusplus.R;
 import com.udacity.firebase.shoppinglistplusplus.model.ShoppingList;
 import com.udacity.firebase.shoppinglistplusplus.utils.Constants;
@@ -109,7 +104,7 @@ public class AddListDialogFragment extends DialogFragment {
         // Go to the "activeList" child node of the root node.
         // This will create the node for you if it doesn't already exist.
         // Then using the setValue menu it will serialize the ShoppingList POJO
-        ref.child("activeList").setValue(currentList);
+        ref.child(Constants.FIREBASE_LOCATION_ACTIVE_LIST).setValue(currentList);
     }
 }
 
