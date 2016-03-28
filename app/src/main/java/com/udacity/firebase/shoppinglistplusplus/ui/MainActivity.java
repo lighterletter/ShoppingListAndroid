@@ -30,9 +30,6 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /**
-         * Link layout elements from XML and setup the toolbar
-         */
         initializeScreen();
     }
 
